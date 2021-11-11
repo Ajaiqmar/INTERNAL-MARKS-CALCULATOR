@@ -1,0 +1,34 @@
+"""df_amcat = pd.read_excel("amcat.xls",sheet_name="CSE & IT")
+df_skillrack = pd.read_excel("skillrack.xlsx")
+
+rollNoAmcat = cleanData(df_amcat["universityRollNo"].to_numpy().copy())
+rollNoSkillrack = df_skillrack["Regn Number"].to_numpy().copy()
+
+mcq = getMcqPercentage(df_skillrack["MCQ - APTITUDE"].to_numpy().copy())
+dc = getDcPercentage(df_skillrack["DAILYCHALLENGE"].to_numpy().copy())
+da = getDaPercentage(df_skillrack["MCQ - APTITUDE"].to_numpy().copy())
+
+automata = getAutomataPercentage(df_amcat["Automata Fix(Score_3308)"].to_numpy().copy())
+writex = getWritex(df_amcat["WriteX - Essay Writing_Total Score"].to_numpy().copy())
+tech = getTechnical(df_amcat["Core Java (Entry Level)(Percentile_1937)"].to_numpy().copy(),df_amcat["Computer Science (Level 2)(Percentile_4305)"].to_numpy().copy())
+apt = getAptitude(df_amcat["Quantitative Ability (Advanced)(Percentile_6027)"].to_numpy().copy(),df_amcat["English Comprehension(Percentile_5954)"].to_numpy().copy(),df_amcat["Logical Ability(Percentile_5957)"].to_numpy().copy())
+
+rollNo = {}
+ind = 0
+
+for i in range(len(rollNoSkillrack)):
+	if rollNoSkillrack[i] in rollNo:
+		rollNo[rollNoSkillrack[i]].append(((mcq[i]+dc[i]+35+da[i])/100)*50)
+	elif(type(rollNoSkillrack[i]) == int):
+		rollNo[int(rollNoSkillrack[i])] = [((mcq[i]+dc[i]+35+da[i])/100)*50]
+
+for i in rollNoAmcat:
+	if i in rollNo:
+		rollNo[i].append(((automata[ind]+writex[ind]+tech[ind]+apt[ind])/100)*50)
+	ind += 1"""
+
+
+"""for i in np.sort(list(rollNo.keys())):
+	print("{} {}".format(i,rollNo[i]))
+
+print(len(rollNo))"""

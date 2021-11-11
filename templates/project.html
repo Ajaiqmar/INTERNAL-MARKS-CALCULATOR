@@ -1,0 +1,42 @@
+{% include "header.html" %}
+<form action="/search" method="post" class="container f">
+  <label class="form-label">REGISTER NUMBER</label>
+  <input type="text" class="form-control" name="rno" required />
+  <button class="btn btn-dark b">SEARCH</button>
+</form>
+<div class="container f text-center">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">REGISTER NUMBER</th>
+        <th scope="col">NAME</th>
+        <th scope="col">SKILLRACK PERCENTILE</th>
+        <th scope="col">AMCAT PERCENTILE</th>
+        <th scope="col">INTERNAL MARKS PERCENTILE</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if(id == None): %}
+        {% for i in regNo %}
+          <tr>
+            <th scope="row">{{ i }}</th>
+            <td>{{ rollNo[i][0] }}</td>
+            <td>{{ rollNo[i][1] }}</td>
+            <td>{{ rollNo[i][2] }}</td>
+            <td>{{ rollNo[i][1]+rollNo[i][2] }}</td>
+          </tr>
+        {% endfor %}
+      {% else: %}
+        <tr>
+          <th scope="row">{{ id }}</th>
+          <td>{{ rollNo[id][0] }}</td>
+          <td>{{ rollNo[id][1] }}</td>
+          <td>{{ rollNo[id][2] }}</td>
+          <td>{{ rollNo[id][1]+rollNo[id][2] }}</td>
+        </tr>
+      {% endif %}
+
+    </tbody>
+  </table>
+</div>
+{% include "footer.html" %}

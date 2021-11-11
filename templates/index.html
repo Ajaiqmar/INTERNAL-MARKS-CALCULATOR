@@ -1,0 +1,15 @@
+{% include "header.html" %}
+  <form action="/submit" method="POST" enctype="multipart/form-data">
+    <div class="container f">
+      <label>SKILLRACK EXCEL FILE:</label><br /><br />
+      <input type="file" name="sk" required />
+    </div>
+    <div class="container f">
+      <label>AMCAT EXCEL FILE:</label><br /><br />
+      <input type="file" name="am" required />
+    </div>
+    <div class="container">
+      <button class="btn btn-dark" type="submit">SUBMIT</button>
+    </div>
+  </form>
+{% include "footer.html" %}

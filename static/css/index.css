@@ -1,0 +1,38 @@
+/* GLOBAL VARIABLES */
+body{
+  font-family: 'Nunito', sans-serif;
+}
+/* CSS FOR "HEADER.HTML" */
+.h{
+  margin:2rem;
+  font-family: 'Nunito', sans-serif;
+  font-size:3rem;
+  display: inline-block;
+}
+
+/* CSS FOR "INDEX.HTML" */
+
+.logo{
+  width:6rem;
+  height:6rem;
+}
+.f{
+  padding:3rem;
+  border: 2px solid #000000;
+  margin:3rem auto;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+/* CSS FOR "SYSTEM.HTML" */
+
+.bu{
+  margin: 3rem 3rem 1rem 3rem;
+}
+
+/* CSS FOR "PROJECT.HTML"*/
+
+.b{
+  margin-top: 1rem;
+}
